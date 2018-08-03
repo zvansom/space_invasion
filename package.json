@@ -1,7 +1,8 @@
 {
   "name": "space_invasion",
   "version": "1.0.0",
-  "description": "",
+  "description": "Starter code for WDI",
+  "repository": "git@github.com:WDI-SEA/space_invasion.git",
   "scripts": {
     "start": "browser-sync start --server . --files ."
   },
