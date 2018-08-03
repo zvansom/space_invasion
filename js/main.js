@@ -71,10 +71,13 @@ function create() {
   enemies.createMultiple(50, 'enemy');
   enemies.setAll('outOfBoundsKill', true);
   enemies.setAll('checkWorldBounds', true);
+  enemies.forEach(function(enemy) {
+    enemy.life = ENEMY_LIFE;
+  })
 
   // Create explosions
   explosions = game.add.group();
-  explosions.createMultiple(10, 'smallboom');
+  explosions.createMultiple(20, 'smallboom');
   explosions.setAll('anchor.x', 0);
   explosions.setAll('anchor.y', 0);
   explosions.forEach(function(explosion){
@@ -120,4 +123,6 @@ function update(){
 
   // Define desired collisions
   game.physics.arcade.overlap(player, enemies, hurtPlayer);
+  game.physics.arcade.overlap(lasers, enemies, weaponEnemy);
+  game.physics.arcade.overlap(missiles, enemies, weaponEnemy);
 }
