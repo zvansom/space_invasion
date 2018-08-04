@@ -5,4 +5,14 @@ function addScore(amount) {
 
 function gameOver() {
   console.log('game over');
+  music.pause();
+
+  swal({
+    title: 'Good job!',
+    text: 'Thanks for playing!',
+    type: 'warning',
+    showCancelButton: false,
+    confirmButtonText: 'Cool',
+    closeOnConfirm: true
+  });
 }
